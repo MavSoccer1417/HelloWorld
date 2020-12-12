@@ -28,6 +28,8 @@ node {
 
     stage('Test Image') {
         app.run()
+        app.inside
+        {}
     }
     /*
     stage('PushImage') {
