@@ -2,8 +2,8 @@
 node {
 
     def app
-    def registry 'helloworld'
-    def registryCredential johnokeefengc
+    def registry = 'helloworld'
+    def registryCredential = 'johnokeefengc'
 
 
     stage('Clone repository') {
