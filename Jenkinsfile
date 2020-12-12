@@ -9,4 +9,8 @@ node {
     stage('Build') {
         sh 'javac HelloWorld.java'
     }
+    
+    stage('DockerImageBuild') {
+        sh ' docker build --tag helloworld:1.0 .'
+    }
 }
