@@ -28,13 +28,15 @@ node {
 
     stage('Test Image') {
         def buildName = registry + ":$BUILD_NUMBER"
-        docker.run buildName
-    }
     /*
-    stage('PushImage') {
-
+        docker.run buildName
+    */
+    }
+    stage('Push Image') {
+        docker.withRegistry('https://registry.hub.docker.com', 'mavsoccer1417') {
+            app.push()
+        }
     }
 
-    */
 
 }
