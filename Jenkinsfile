@@ -2,7 +2,7 @@
 node {
 
     def app
-    def registry = 'helloworld'
+    def registry = 'mavsoccer1417/helloworld'
     def registryCredential = 'johnokeefengc'
 
 
@@ -33,7 +33,7 @@ node {
     */
     }
     stage('Push Image') {
-        docker.withRegistry('https://registry.hub.docker.com', 'dockerCredentials') {
+        docker.withRegistry(registry, 'dockerCredentials') {
             app.push()
         }
     }
