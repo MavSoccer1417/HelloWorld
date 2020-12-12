@@ -38,5 +38,10 @@ node {
         }
     }
 
+    stage('Pull Image') {
+        docker.withRegistry('https://registry.hub.docker.com', 'dockerCredentials') {
+            app.pull()
+        }
 
+    }
 }
