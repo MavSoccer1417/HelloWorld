@@ -42,6 +42,10 @@ node {
         docker.withRegistry('https://registry.hub.docker.com', 'dockerCredentials') {
             app.pull()
         }
-
     }
+
+    stage('Run Image') {
+        app.run()
+    }
+
 }
