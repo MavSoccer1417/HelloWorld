@@ -14,8 +14,8 @@ node {
     }
     
     stage('DockerImageBuild') {
-        #sh ' docker build --tag helloworld:1.0 .'
-        #docker.withRegistry( 'https://' + registry, registryCredential {
+        /*sh ' docker build --tag helloworld:1.0 .'
+         *docker.withRegistry( 'https://' + registry, registryCredential {*/
         docker.withRegistry( ' registry, registryCredential {
             def buildName = registry + ":$BUILD_NUMBER"
                 app = docker.build buildName
