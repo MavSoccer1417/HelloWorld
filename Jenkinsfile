@@ -7,6 +7,6 @@ node {
         git 'https://github.com/MavSoccer1417/HelloWorld.git'
     }
     stage('Build') {
-        javac HelloWorld.java
+        sh 'javac HelloWorld.java'
     }
 }
