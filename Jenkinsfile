@@ -27,8 +27,7 @@ node {
     }
 
     stage('Test Image') {
-        def buildName = registry + ":$BUILD_NUMBER"
-        docker run buildName
+        app.run()
     }
     /*
     stage('PushImage') {
