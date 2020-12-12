@@ -33,7 +33,7 @@ node {
     */
     }
     stage('Push Image') {
-        docker.withRegistry(registry, 'dockerCredentials') {
+        docker.withRegistry('https://' + registry, 'dockerCredentials') {
             app.push()
         }
     }
