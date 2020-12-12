@@ -21,6 +21,7 @@ node {
                 app = docker.build buildName
                 app.push()
         }*/ 
+        sh 'echo $USER'
         def buildName = registry + ":$BUILD_NUMBER"
         docker.build(buildName)
     }
