@@ -33,7 +33,7 @@ node {
     */
     }
     stage('Push Image') {
-        docker.withRegistry('https://registry.hub.docker.com', 'mavsoccer1417') {
+        docker.withRegistry('https://registry.hub.docker.com', 'dockerCredentials') {
             app.push()
         }
     }
