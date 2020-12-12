@@ -23,6 +23,22 @@ node {
         }*/ 
         sh 'echo $USER'
         def buildName = registry + ":$BUILD_NUMBER"
-        docker.build(buildName)
+        app  = docker.build(buildName)
     }
+
+    stage('Test Image') {
+        def buildName = registry + ":$BUILD_NUMBER"
+        docker.run(buildName)
+    }
+    /*
+    stage('PushImage') {
+
+    }
+
+    */
+    
+
+ 
+
+
 }
