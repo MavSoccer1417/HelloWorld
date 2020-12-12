@@ -13,7 +13,7 @@ node {
         sh 'javac HelloWorld.java'
     }
     
-    stage('DockerImageBuild') {
+    stage('Build Docker Image') {
         /*sh ' docker build --tag helloworld:1.0 .'
          *docker.withRegistry( 'https://' + registry, registryCredential {
         docker.withRegistry( ' registry, registryCredential {
@@ -28,7 +28,7 @@ node {
 
     stage('Test Image') {
         def buildName = registry + ":$BUILD_NUMBER"
-        sh 'docker run  + $buildName'
+        sh '"docker run " + $buildName'
     }
     /*
     stage('PushImage') {
